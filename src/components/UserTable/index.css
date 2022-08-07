@@ -1,0 +1,98 @@
+.user-container {
+  margin: 20px;
+  background-color: #ffdcdc;
+}
+
+.user-wrapper {
+  padding: 10px 20px;
+}
+
+.table-header {
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+  padding: 20px 5px;
+  font-weight: 400;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: white;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 1px;
+}
+
+.btn:disabled {
+  border: 1px solid rgba(0, 0, 0, 0.323);
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.table-filters {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 15px 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.custom-input {
+  width: 100px;
+  padding: 5px;
+}
+
+.table-footer {
+  display: flex;
+  padding: 20px 10px 10px;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer {
+  text-align: center;
+}
+
+/* custome table */
+
+.table-wrapper {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.table-root {
+  width: 100%;
+  min-width: 300px;
+}
+
+.table-root td,
+.table-root th {
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.table-root th {
+  border-bottom: 1px solid black;
+}
+
+@media (max-width: 780px) {
+  body {
+    font-size: 14px;
+  }
+
+  .table-filters {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .d-flex {
+    justify-content: center;
+  }
+}

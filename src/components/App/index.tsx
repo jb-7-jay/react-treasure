@@ -7,8 +7,10 @@ import store from '../../redux/store';
 import Todos from '../Todos';
 import Todo from '../Todos/Todo';
 import Home from '../Home';
-// import NotFound from '../NotFound';
+import StickyFooterButton from '../common/StickyFooterButton';
+
 import '../../index.css';
+import UserTable from '../UserTable/index';
 
 const persistor = persistStore(store);
 
@@ -21,9 +23,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="todos" element={<Todos />} />
             <Route path="/todos/:id" element={<Todo />} />
+            <Route path="/custom-table" element={<UserTable />} />
             <Route path="*" element={<Home />} />
-            {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
+          <StickyFooterButton />
         </BrowserRouter>
       </PersistGate>
     </Provider>
