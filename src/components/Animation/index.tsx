@@ -1,18 +1,17 @@
-// import { Route, Routes } from 'react-router-dom';
-// import Hexagon from './Hexagon';
-// import HexagonTailed from './HexagonTailed';
 import { NavLink } from 'react-router-dom';
 
 const Animation = () => {
   return (
     <div>
-      Animation
-      <NavLink to="/animation/hexagon">
-        <button className="btn-primary block m-2">Hexagon</button>
-      </NavLink>
-      <NavLink to="/animation/hexagon-tailed">
-        <button className="btn-primary block m-2">Hexagon Tailed</button>
-      </NavLink>
+      <h4 className="page-header mb-10">Animations</h4>
+      <div className="flex justify-center gap-2">
+        <NavLink to="/animation/hexagon">
+          <button className="btn-primary">Hexagon</button>
+        </NavLink>
+        <NavLink to="/animation/hexagon-tailed">
+          <button className="btn-primary">Hexagon Tailed</button>
+        </NavLink>
+      </div>
     </div>
   );
 };

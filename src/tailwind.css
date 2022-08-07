@@ -6,4 +6,8 @@
   .btn-primary {
     @apply py-2 px-4 bg-primary-light text-white rounded-lg shadow-md hover:bg-primary-main;
   }
+
+  .page-header {
+    @apply bg-primary-main p-4 text-3xl text-center text-white;
+  }
 }

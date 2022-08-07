@@ -1,5 +1,7 @@
-import './index.css';
 import { useEffect, useRef } from 'react';
+import './index.css';
+
+const dummyArray11Length = Array(20).fill(0);
 
 const HexagonTailed = () => {
   const mouseRef = useRef<HTMLDivElement>(null);
@@ -8,6 +10,7 @@ const HexagonTailed = () => {
     if (mouseRef.current) {
       mouseRef.current.style.left = e.clientX + 'px';
       mouseRef.current.style.top = e.clientY + 'px';
+      mouseRef.current.style.visibility = 'visible';
     }
   };
 
@@ -19,20 +22,16 @@ const HexagonTailed = () => {
   }, []);
 
   return (
-    <div className="bg-black h-[100vh]">
+    <div className="bg-black h-[100vh] overflow-hidden relative">
       <div id="cursor" ref={mouseRef}></div>
       <div className="container-main">
-        {Array(11)
-          .fill(0)
-          .map((_, outerkey) => (
-            <div key={outerkey} className="tail-row-main">
-              {Array(16)
-                .fill(0)
-                .map((_, index) => (
-                  <div key={index} className="tail-hexagon" />
-                ))}
-            </div>
-          ))}
+        {dummyArray11Length.map((_, outerkey) => (
+          <div key={outerkey} className="tail-row-main">
+            {dummyArray11Length.map((_, innerKey) => (
+              <div key={innerKey} className="tail-hexagon" />
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );

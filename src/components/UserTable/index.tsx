@@ -78,12 +78,12 @@ const UserTable = () => {
     {
       keyIndex: 'city',
       label: 'City',
-      render: (item: any) => <div style={{ fontStyle: 'italic', color: '#080eff' }}>{item}</div>,
+      render: (item: string) => <div style={{ fontStyle: 'italic', color: '#080eff' }}>{item}</div>,
     },
     {
       keyIndex: 'price',
       label: 'Price (in doller)',
-      render: (item: any) => {
+      render: (item: string) => {
         return <div>{item} $</div>;
       },
     },

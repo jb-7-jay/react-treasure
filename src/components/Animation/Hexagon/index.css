@@ -61,4 +61,5 @@
   transform: translate(-50%, -50%);
   animation: animate-blured 4s linear infinite;
   z-index: 1;
+  visibility: hidden;
 }
