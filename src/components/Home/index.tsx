@@ -2,6 +2,10 @@ import { NavLink } from 'react-router-dom';
 
 const links = [
   {
+    path: '/animation',
+    label: 'Animations',
+  },
+  {
     path: '/',
     label: 'Design - Flex Box',
   },
