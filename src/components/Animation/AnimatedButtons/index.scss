@@ -1,0 +1,455 @@
+.AnimatedButtons {
+  background-color: rgb(23, 8, 90);
+  font-family: cursive;
+  display: flex;
+  flex-direction: column;
+  padding-top: 18px;
+
+  &__LinkContainer {
+    display: block;
+    background-color: #dafbe9;
+    font-size: 20px;
+    text-align: center;
+    padding: 12px 10px;
+    margin: 10px auto;
+    width: 50%;
+
+    & a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #580732;
+      color: white;
+      padding: 14px 32px;
+      position: relative;
+    }
+
+    &--link1 {
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to right, blue, red);
+        transform: scaleX(0);
+        transition: all 0.5s;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &--link2 {
+      position: relative;
+      overflow: hidden;
+      padding: 10px 20px;
+
+      & span {
+        position: relative;
+        z-index: 2;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2%;
+        height: 100%;
+        background-color: #5373a9;
+        transform: scaleY(0);
+        transition: width 0.3s 0.3s, transform 0.3s;
+      }
+
+      &:hover::after {
+        width: 100%;
+        transform: scaleY(1);
+      }
+    }
+
+    &--link3 {
+      overflow: hidden;
+
+      & #first {
+        display: inline-block;
+        transition: all 0.5s;
+        transform: translateY(0px);
+      }
+
+      &:hover #first {
+        transform: translateY(-50px);
+      }
+
+      & #second {
+        display: block;
+        position: absolute;
+        top: 0%;
+        left: 0;
+        transition: all 0.5s;
+        padding: 14px 32px;
+        transform: translateY(50px);
+      }
+
+      &:hover #second {
+        transform: translateY(0px);
+      }
+    }
+
+    &--link4 {
+      .special::after {
+        content: '';
+        width: 100%;
+        height: 9%;
+        background-color: red;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform 1s;
+        transform-origin: left;
+      }
+
+      &:hover .special::after {
+        transform: none;
+        transform-origin: right;
+      }
+    }
+  }
+
+  &__Bordered {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #0c002b;
+    color: white;
+    padding: 14px 32px;
+    position: relative;
+    height: 160px;
+    font-family: sans-serif;
+
+    a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #1670f0;
+      padding: 30px 60px;
+      font-size: 30px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      overflow: hidden;
+    }
+
+    a::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      bottom: 2px;
+      width: 50%;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    a span:nth-child(1) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #0c002b, #1779ff);
+      animation: anime1 2s linear infinite;
+      -webkit-animation: anime1 2s linear infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes anime1 {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    a span:nth-child(2) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, #0c002b, #1779ff);
+      animation: anime2 2s linear infinite;
+      -webkit-animation: anime2 2s linear infinite;
+    }
+
+    @keyframes anime2 {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    a span:nth-child(3) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(to left, #0c002b, #1779ff);
+      animation: anime3 2s linear infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes anime3 {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    a span:nth-child(4) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to top, #0c002b, #1779ff);
+      animation: anime4 2s linear infinite;
+    }
+
+    @keyframes anime4 {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    a:active {
+      transform: translateY(-3px);
+    }
+  }
+
+  &__Advanced {
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      background-color: #b2b3a0;
+      font-size: 20px;
+      text-align: center;
+      padding: 12px 10px;
+      margin: 10px auto;
+      width: 50%;
+      gap: 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 70px 20px;
+    }
+
+    .button1 {
+      padding: 15px 50px;
+      background: rgb(235, 188, 188);
+      font-size: 21px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
+    }
+
+    .button1 span {
+      position: relative;
+      z-index: 3;
+      color: black;
+      transition: all 0.4s;
+    }
+
+    .button1:hover span {
+      color: white;
+    }
+
+    .button1::before {
+      position: absolute;
+      content: '';
+      top: -100%;
+      left: 0;
+      background-color: rgb(43, 255, 0);
+      height: 100%;
+      width: 50%;
+      transition: all 0.4s;
+    }
+
+    .button1:hover::before {
+      transform: translateY(100%);
+    }
+
+    .button1::after {
+      position: absolute;
+      content: '';
+      top: 100%;
+      right: 0;
+      background-color: rgb(17, 0, 255);
+      height: 100%;
+      width: 50%;
+      transition: all 0.4s;
+    }
+
+    .button1:hover::after {
+      transform: translateY(-100%);
+    }
+
+    .button2 {
+      background-color: #edf7ff;
+      color: #3a113f;
+      text-decoration: none;
+      padding: 15px 30px;
+      font-size: 24px;
+      position: relative;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      transition: all 0.4s;
+      overflow: hidden;
+    }
+
+    .button2 span {
+      position: relative;
+      z-index: 12;
+    }
+
+    .button2::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      border: 2px solid black;
+      border-bottom: transparent;
+      border-right: transparent;
+      transition: all 0.4s;
+    }
+
+    .button2:hover::before {
+      width: 100%;
+      height: 100%;
+    }
+
+    .button2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      border: 2px solid black;
+      border-top: transparent;
+      border-left: transparent;
+      transition: all 0.4s;
+    }
+
+    .button2:hover::after {
+      width: 100%;
+      height: 100%;
+    }
+
+    .button3 {
+      position: relative;
+      font-size: 24px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      font-family: cursive;
+      background-color: #237ec7;
+      color: #3a113f;
+      text-decoration: none;
+      padding: 20px;
+      display: block;
+      overflow: hidden;
+      transition: all 0.4s;
+    }
+
+    .button3 span {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .button3::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #f349a5;
+      transform: translate(-50%, -50%);
+      animation-fill-mode: forwards;
+      transition: height 0.5s, width 0.6s, border-radius 0.4s ease-in-out;
+    }
+
+    .button3:hover {
+      border-radius: 20px;
+    }
+
+    .button3:hover::before {
+      width: 600px;
+      height: 600px;
+    }
+
+    /* Button 4 */
+
+    .button4 {
+      position: relative;
+      font-size: 24px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      font-family: cursive;
+      background-color: #237ec7;
+      color: #3a113f;
+      text-decoration: none;
+      padding: 20px;
+      display: block;
+      overflow: hidden;
+      transition: all 0.4s;
+    }
+
+    .button4 .b4-text {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    #b4-bg {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      display: block;
+      border-radius: 50%;
+      background-color: #f349a5;
+      transform: translate(-50%, -50%);
+      transition: height 0.5s, width 0.6s, border-radius 0.4s ease-in-out;
+    }
+
+    .button4:hover #b4-bg {
+      width: 600px;
+      height: 600px;
+    }
+  }
+}

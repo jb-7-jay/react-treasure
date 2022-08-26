@@ -11,6 +11,12 @@ const Animation = () => {
         <NavLink to="/animation/hexagon-tailed">
           <button className="btn-primary">Hexagon Tailed</button>
         </NavLink>
+        <NavLink to="/animation/flip-3d">
+          <button className="btn-primary">3D Flip</button>
+        </NavLink>
+        <NavLink to="/animation/buttons">
+          <button className="btn-primary">Animated Buttons</button>
+        </NavLink>
       </div>
     </div>
   );
