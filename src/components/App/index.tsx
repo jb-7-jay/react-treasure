@@ -19,6 +19,9 @@ import AnimatedButtons from '../Animation/AnimatedButtons';
 import GlowingCards from '../Animation/GlowingCards/index';
 import ScrollingText from '../Animation/ScrollingText/index';
 import Spinner from '../Animation/Spinner/index';
+import CursorCircle from '../Animation/CursorCircle/index';
+import Navbar3D from '../Animation/Navbar3D';
+import Seesaw from '../Animation/Seesaw/index';
 
 const persistor = persistStore(store);
 
@@ -40,6 +43,9 @@ function App() {
             <Route path="/animation/glowing-cards" element={<GlowingCards />} />
             <Route path="/animation/scrolling-text" element={<ScrollingText />} />
             <Route path="/animation/spinner" element={<Spinner />} />
+            <Route path="/animation/cursor-circle" element={<CursorCircle />} />
+            <Route path="/animation/navbar-3d" element={<Navbar3D />} />
+            <Route path="/animation/seesaw" element={<Seesaw />} />
             <Route path="*" element={<Home />} />
           </Routes>
           <StickyFooterButton />
