@@ -33,7 +33,7 @@ const AnimatedButtons = () => {
         </a>
       </div>
 
-      <div className="AnimatedButtons__Bordered text-center mx-auto bg-green-600 p-3 w-1/2">
+      <div className="AnimatedButtons__Bordered text-center mx-auto bg-darkblue-600 p-3 w-1/2">
         <a className="" href="#">
           <span></span>
           <span></span>
