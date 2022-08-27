@@ -1,0 +1,49 @@
+.ScrollingText {
+  section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+  }
+
+  section div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0e2330;
+  }
+
+  section div:nth-child(2) {
+    background: #e91e63;
+    clip-path: circle(200px at center);
+  }
+
+  section div h2 {
+    position: absolute;
+    font-size: 10em;
+    color: #fff;
+    white-space: nowrap;
+    left: 0;
+    line-height: 100vh;
+    cursor: default;
+    animation: sliding 30s linear infinite;
+  }
+
+  section div:nth-child(2) h2 {
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: #fff;
+    color: transparent;
+  }
+
+  @keyframes sliding {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}

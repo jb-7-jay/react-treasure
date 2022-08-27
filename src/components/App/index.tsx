@@ -16,6 +16,9 @@ import Flip3D from '../Animation/Flip3D';
 
 import '../../index.css';
 import AnimatedButtons from '../Animation/AnimatedButtons';
+import GlowingCards from '../Animation/GlowingCards/index';
+import ScrollingText from '../Animation/ScrollingText/index';
+import Spinner from '../Animation/Spinner/index';
 
 const persistor = persistStore(store);
 
@@ -34,6 +37,9 @@ function App() {
             <Route path="/animation/hexagon-tailed" element={<HexagonTailed />} />
             <Route path="/animation/flip-3d" element={<Flip3D />} />
             <Route path="/animation/buttons" element={<AnimatedButtons />} />
+            <Route path="/animation/glowing-cards" element={<GlowingCards />} />
+            <Route path="/animation/scrolling-text" element={<ScrollingText />} />
+            <Route path="/animation/spinner" element={<Spinner />} />
             <Route path="*" element={<Home />} />
           </Routes>
           <StickyFooterButton />
