@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { useDeleteTodoMutation, useTodoByIdQuery } from '../../redux/services/todo';
+import { useDeleteTodoMutation, useTodoByIdQuery } from '../../../redux/services/todo';
 
 const Todo = () => {
   const params = useParams();

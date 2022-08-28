@@ -1,0 +1,50 @@
+.Seasaw {
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(12, 12, 56);
+
+  .container {
+    width: 450px;
+    height: 70px;
+    border-bottom: 4px solid whitesmoke;
+    /* padding: 10px 0; */
+    position: relative;
+    animation: rotated 1.2s linear infinite alternate;
+  }
+
+  @keyframes rotated {
+    from {
+      transform: rotate(-35deg);
+    }
+    to {
+      transform: rotate(35deg);
+    }
+  }
+
+  .circle {
+    width: 80px;
+    height: 70px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: whitesmoke;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    animation: circle-anime 1.2s linear infinite alternate-reverse;
+  }
+
+  @keyframes circle-anime {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      left: calc(100% - 80px);
+      transform: rotate(360deg);
+    }
+  }
+}

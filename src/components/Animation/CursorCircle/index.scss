@@ -1,0 +1,36 @@
+.CursorCircle {
+  section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+  }
+
+  section .text {
+    position: absolute;
+    color: #fff;
+    font-size: 1.5em;
+    user-select: none;
+    pointer-events: none;
+    animation: rotate 5s linear infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  section .text span {
+    position: absolute;
+    text-transform: uppercase;
+    display: inline-block;
+    top: -100px;
+    transform-origin: 0 100px;
+  }
+}
