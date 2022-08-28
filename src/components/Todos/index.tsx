@@ -7,7 +7,7 @@ import {
 } from '../../redux/services/todo';
 
 const Todos = () => {
-  const { data, isFetching } = useTodosQuery();
+  const { data, isFetching, error } = useTodosQuery();
 
   const [todoInput, setTodoInput] = useState('');
 
@@ -24,7 +24,14 @@ const Todos = () => {
         </p>
       </div>
       <div className="bg-blue-500 text-center my-2 py-2">
-        <input type="text" value={todoInput} onChange={(e) => setTodoInput(e.target.value)} />{' '}
+        <input
+          id="input"
+          name="todoInput"
+          data-testid="todoInput"
+          type="text"
+          value={todoInput}
+          onChange={(e) => setTodoInput(e.target.value)}
+        />{' '}
         <button
           className="btn-primary"
           onClick={() =>
@@ -37,6 +44,7 @@ const Todos = () => {
           Add Todo
         </button>
       </div>
+      {error && <>Something went wrong</>}
       {isFetching && !data ? (
         <div>Loading...</div>
       ) : (

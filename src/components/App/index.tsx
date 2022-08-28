@@ -5,14 +5,6 @@ import { persistStore } from 'redux-persist';
 
 import store from '../../redux/store';
 import StickyFooterButton from '../common/StickyFooterButton';
-// import Todos from '../Todos';
-// import Todo from '../Todos/Todo';
-// import Home from '../Home';
-// import UserTable from '../UserTable/index';
-// import Animation from '../Animation';
-// import Hexagon from '../Animation/HexagonTailed';
-// import HexagonTailed from '../Animation/Hexagon';
-// import Flip3D from '../Animation/Flip3D';
 
 import AppRoutes from '../../AppRoutes';
 
