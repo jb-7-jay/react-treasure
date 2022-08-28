@@ -28,6 +28,8 @@ I'm a full Stack Web Developer...
 ```bash
   yarn
   yarn dev
+
+  --> will generage Test Coverage Report - yarn coverage
 ```
 
 ## Authors
