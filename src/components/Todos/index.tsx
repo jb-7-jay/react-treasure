@@ -7,7 +7,7 @@ import {
 } from '../../redux/services/todo';
 
 const Todos = () => {
-  const { data, isFetching, error } = useTodosQuery();
+  const { data, isFetching } = useTodosQuery();
 
   const [todoInput, setTodoInput] = useState('');
 
@@ -44,7 +44,6 @@ const Todos = () => {
           Add Todo
         </button>
       </div>
-      {error && <>Something went wrong</>}
       {isFetching && !data ? (
         <div>Loading...</div>
       ) : (
