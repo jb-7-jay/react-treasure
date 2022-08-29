@@ -14,6 +14,7 @@ import Spinner from '../components/Animation/Spinner';
 import CursorCircle from '../components/Animation/CursorCircle';
 import Navbar3D from '../components/Animation/Navbar3D';
 import Seesaw from '../components/Animation/Seesaw';
+import FramerMotion from '../components/Animation/FramerMotion';
 
 const AppRoutes = () => {
   const publicRoutes = (
@@ -33,6 +34,7 @@ const AppRoutes = () => {
       <Route path="/animation/cursor-circle" element={<CursorCircle />} />
       <Route path="/animation/navbar-3d" element={<Navbar3D />} />
       <Route path="/animation/seesaw" element={<Seesaw />} />
+      <Route path="/animation/framer-motion" element={<FramerMotion />} />
     </>
   );
   return <Routes>{publicRoutes}</Routes>;

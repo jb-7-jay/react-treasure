@@ -35,6 +35,9 @@ const Animation = () => {
         <NavLink to="/animation/seesaw">
           <button className="btn-primary">Seesaw</button>
         </NavLink>
+        <NavLink to="/animation/framer-motion">
+          <button className="btn-primary bg-primary-main">Framer Motion</button>
+        </NavLink>
       </div>
     </div>
   );
