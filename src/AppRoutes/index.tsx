@@ -3,6 +3,7 @@ import Home from '../components/Home';
 import Todos from '../components/Todos';
 import Todo from '../components/Todos/Todo';
 import HexagonTailed from '../components/Animation/HexagonTailed';
+import Hexagon from '../components/Animation/Hexagon';
 import UserTable from '../components/UserTable';
 import Animation from '../components/Animation';
 import Flip3D from '../components/Animation/Flip3D';
@@ -20,7 +21,7 @@ const AppRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="todos" element={<Todos />} />
       <Route path="/todos/:id" element={<Todo />} />
-      <Route path="/animation/hexagon" element={<HexagonTailed />} />
+      <Route path="/animation/hexagon" element={<Hexagon />} />
       <Route path="/custom-table" element={<UserTable />} />
       <Route path="/animation" element={<Animation />} />
       <Route path="/animation/hexagon-tailed" element={<HexagonTailed />} />
