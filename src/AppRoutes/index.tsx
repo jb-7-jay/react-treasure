@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from '../components/Home';
 import Todos from '../components/Todos';
 import Todo from '../components/Todos/Todo';
@@ -15,8 +15,10 @@ import CursorCircle from '../components/Animation/CursorCircle';
 import Navbar3D from '../components/Animation/Navbar3D';
 import Seesaw from '../components/Animation/Seesaw';
 import FramerMotion from '../components/Animation/FramerMotion';
+import { AnimatePresence } from 'framer-motion';
 
 const AppRoutes = () => {
+  const location = useLocation();
   const publicRoutes = (
     <>
       <Route path="/" element={<Home />} />
@@ -37,7 +39,13 @@ const AppRoutes = () => {
       <Route path="/animation/framer-motion" element={<FramerMotion />} />
     </>
   );
-  return <Routes>{publicRoutes}</Routes>;
+  return (
+    <AnimatePresence mode="wait">
+      <Routes key={location.pathname} location={location}>
+        {publicRoutes}
+      </Routes>
+    </AnimatePresence>
+  );
 };
 
 export default AppRoutes;

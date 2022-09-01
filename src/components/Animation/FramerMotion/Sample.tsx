@@ -7,7 +7,7 @@ const Sample = ({ isVisible }: any) => {
 
   console.log(animationContext);
 
-  const list = {
+  const listParentVariant = {
     visible: {
       opacity: 1,
       transition: {
@@ -19,13 +19,16 @@ const Sample = ({ isVisible }: any) => {
       opacity: 0,
       transition: {
         when: 'afterChildren',
+        staggerChildren: 0.2,
+        staggerDirection: -1,
       },
     },
   };
 
-  const item = {
+  const listItemVariant = {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -200 },
+    // exit: { opacity: 0, x: -200 },
   };
 
   // const secondVariants = {
@@ -41,9 +44,9 @@ const Sample = ({ isVisible }: any) => {
   return (
     <div className="text-center">
       <h4>Sample Component</h4>
-      <div>
-        <AnimatePresence>
-          {isVisible && (
+      <div className="w-2/3 mx-auto">
+        <AnimatePresence key="first">
+          {(isVisible || true) && (
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -54,6 +57,7 @@ const Sample = ({ isVisible }: any) => {
           )}
         </AnimatePresence>
       </div>
+
       <motion.div
         className="w-max mx-auto my-5 bg-purple-500 text-white py-2 px-5"
         // animate={animationContext}
@@ -95,17 +99,28 @@ const Sample = ({ isVisible }: any) => {
       <br />
 
       {/* First List */}
-      <motion.ul initial="hidden" animate="visible" variants={list} className="mx-auto">
-        <motion.li className="bg-blue-600 text-white px-5 py-3 my-3 w-1/2 mx-auto" variants={item}>
-          First Item
-        </motion.li>
-        <motion.li className="bg-blue-600 text-white px-5 py-3 my-3 w-1/2 mx-auto" variants={item}>
-          Second Item
-        </motion.li>
-        <motion.li className="bg-blue-600 text-white px-5 py-3 my-3 w-1/2 mx-auto" variants={item}>
-          Third Item
-        </motion.li>
-      </motion.ul>
+      <AnimatePresence key="second">
+        {isVisible && (
+          <motion.ul
+            initial="hidden"
+            animate="visible"
+            // exit={{ opacity: 0, scale: 0 }}
+            exit="hidden"
+            variants={listParentVariant}
+            className="mx-auto"
+          >
+            {['First', 'Second', 'Third'].map((item, index) => (
+              <motion.li
+                className="bg-blue-600 text-white px-5 py-3 my-3 w-1/2 mx-auto"
+                variants={listItemVariant}
+                key={index}
+              >
+                {index + 1} === {item}
+              </motion.li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
 
       <br />
 
